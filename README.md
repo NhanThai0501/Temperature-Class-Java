@@ -1,201 +1,95 @@
 # Temperature-Class-Java
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package assign08temperatureclass;
 
-import java.util.Scanner;
+Assignment Objects:
 
-/**
- *
- * @author Nhan
- */
-public class Assign08TemperatureClass {
+Look at and implement exercise # 8 from the book   
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner keyboard = new Scanner (System.in);
-        
-        homeworkHeader();
-        projectName();
-        
-//        menuDisplay();
-//        choice ();
-       
-        
-        double fahTemp, kelTemp, celTemp;
-        
-        System.out.print("Enter the Fahrenheit temperature: ");
-        fahTemp = keyboard.nextDouble();
+HOWEVER,   I find it a bit limiting.   
 
-        Temperature fahrenheit = new Temperature(fahTemp);
-        fahrenheit.setFahrenheit(fahTemp);
-        
-        
-        System.out.println(fahrenheit.getFahrenheit());
-        
-        System.out.println("The temperature converted from Fahrenheit to Celsius is " + fahrenheit.getCelsius());
-        System.out.println("The temperature converted from Fahrenheit to Kelvin is " + fahrenheit.getKelvin());
-        
-        
-    }  
-    
-   
-    static void homeworkHeader ()
-    {
-        System.out.println("Ticket : 86713");
+We can keep the Constructor that has a double as the parameter that specifies a temperature in Fahrenheit.  
 
-        System.out.println( "Course : CMPR 112 ");
+Do do all the methods that they show.   
 
-        System.out.println( "Student : Nhan Thai ");
+ 
 
-        System.out.println( "Instructor : Joel Kirscher");
+ADD 
 
-        System.out.println( "Environment: Win 10 NetBeans ");
-    }
-    
-    static void projectName ()
-    {
-        String title = "Assign 8 Temperature Class\n";
-        System.out.println("Project Name : " + title);
-    }
-    
-    public static class Temperature
-    {
-        private double fahrenheitTemp;
-        private double kelvinTemp;
-        private double celsiusTemp;
-        
-        /**
-         Constructor
-         * @param ftemp 
-         * @param tempInKelvin
-         * @param tempInCelsius
-         */
-        public Temperature (double ftemp)  
-        {
-            fahrenheitTemp = ftemp;
-        }
-        
-           
-        public void setFahrenheit (double ftemp)
-        {
-            fahrenheitTemp = ftemp;
+Add a method to set the temperature given it is in Kelvin   
 
-        }
-        
-        public double getFahrenheit ()
-        {
-            return fahrenheitTemp;
-        }
+void setKelvin ( double tempInKelvin)
 
-Comments: FROM LINE 97 AND BELOW, THIS IS FLAW CODING.
-//        public void setKelvin (double tempInKelvin)
-//        {
-//            kelvinTemp = tempInKelvin;
-//        }
-        
-        public double getKelvin ()
-        {
+Add a method to set the temperature given it is in Celsius:
 
-            kelvinTemp = (5/9 * (fahrenheitTemp - 32) + 273.15);
-            return kelvinTemp;
-        }
-        
-//        public void setCelsius (double tempInCelsius)
-//        {
-//            celsiusTemp = tempInCelsius;
-//        }
-        
-        public double getCelsius ()
-        {
-            
-            celsiusTemp = ((5/9) * (fahrenheitTemp - 32));
-            return celsiusTemp;
-        }
-        
-    }
-}
+void setCelcius ( double tempInCelsius ) 
 
+ 
 
-//    static void menuDisplay ()
-//    {
-//        System.out.println("==========================");
-//        System.out.println("0. Cancel");
-//        System.out.println("1. Fahrenheit");
-//        System.out.println("2. Celsius");
-//        System.out.println("3. Kelvin");
-//        System.out.println("==========================");
-//    }
-    
-//  
+Please document your test cases:
 
-//static void choice ()
-//    {
-//        double fahTemp, kelTemp, celTemp;
-//        int choice;
-//        
-//        Scanner keyboard =  new Scanner(System.in);
-//        System.out.print("Enter your choice: ");
-//        choice = keyboard.nextInt();
-//        
-//        if (choice < 0 || choice > 3)
-//        {
-//            System.out.println("INVALID INPUT FOR CHOICE.\n");
-//            
-//        }
-//        else
-//        {
-//            switch (choice)
-//            {
-//                case 1:
-//                    
-//                    System.out.print("Enter the Fahrenheit temperature: ");
-//                    fahTemp = keyboard.nextDouble();
-//
-//                    Temperature fahrenheit = new Temperature(fahTemp);
-//                            
-//
-//                    System.out.println(fahrenheit.getFahrenheit());
-//        
-//                    System.out.println("The temperature converted from Fahrenheit to Celsius is " + fahrenheit.getCelsius());
-//                    System.out.println("The temperature converted from Fahrenheit to Kelvin is " + fahrenheit.getKelvin());
-//                    break;
-//                    
-//                case 2:
-//                    
-//                    System.out.print("Enter the Celsius temperature: ");
-//                    celTemp = keyboard.nextDouble();
-//
-//                    Temperature celsius = new Temperature(celTemp);
-//
-//                    System.out.println(celsius.getCelsius());
-//        
-//                    System.out.println("The temperature converted from Celsius to Fahrenheit is " + celsius.getFahrenheit());
-//                    System.out.println("The temperature converted from Celsius to Kelvin is " + celsius.getKelvin());
-//                    break;
-//                    
-//                case 3:
-//                       System.out.print("Enter the Kelvin temperature: ");
-//                    kelTemp = keyboard.nextDouble();
-//
-//                    Temperature kelvin = new Temperature(kelTemp);
-//
-//                    System.out.println(kelvin.getKelvin());
-//        
-//                    System.out.println("The temperature converted from Kelvin to Fahrenheit is " + kelvin.getFahrenheit());
-//                    System.out.println("The temperature converted from Kelvin to Celsius is " + kelvin.getCelsius());
-//                    break;
-//                default:
-//                    System.out.println("Program ends.\n");
-//                    break;
-//                    
-//        
-//            }
-//        }
-//    }
+That means you should log each value/function that you use and the result.   
+
+ 
+
+ 
+
+ 
+
+ 
+
+DISCUSSION QUESTIONS:
+
+How many data items are private and hidden inside the class?
+Do you have 1, 2 or 3 data items in the class?   
+Why did you implement that way ?
+How many test cases are need and why?
+ Did you exercise all the lines of code in the class?
+ 
+
+Question # 8 from the book:
+
+ 
+
+Write a Temperature class that will hold a temperature in Fahrenheit,   And provide methods to get the temperature in Fahrenheit, Celsius, and Kelvin.   The class should have the following field
+
+fahrenheit - A double that holds a Fahrenheit Temperature.
+
+The class should have the following methods:
+
+Constructor - The constructor accepts a Fahrenheit temperature ( as a double) and stores it in the ftemp field. 
+setFahrenheit - The setFahrenheit method accepts  a Fahrenheit temperature ( as a double) and stores it in the ftemp field. 
+
+getFahrenheit - Returns the value of the ftemp field, as a Fahrenheit temperature.
+celsius - Returns the temperature in Celsius.
+kelvin - Returns the value of the ftemp field converted to Kelvin.  
+Use the following formula to convert the Fahrenheit temperature to Celsius
+
+     Celsius = ( 5/9 ) * ( Fahrenheit - 32.0 )
+
+Use the following to convert Fahrenheit to Kelvin:
+
+Kelvin = ( ( 5/9 ) * ( Fahrenheit - 32.0 )  + 273.15
+
+8. Temperature class
+Write a Temperature class that will hold a temperature in Fahrenheit, and provide methods to get the temperature in Fahrenheit, Celsius, and Kelvin. The class should have the	
+following field:
+•	 ftemp	–	A	double that holds a Fahrenheit temperature.
+The class should have the following methods:
+•	 Constructor	–	The	constructor	accepts	a	Fahrenheit	 temperature	 (as	a	double) and
+stores it in the ftemp field.
+•	 setFahrenheit – The setFahrenheit method accepts a Fahrenheit temperature (as a
+double) and stores it in the ftemp field.
+•	 getFahrenheit – Returns the value of the ftemp field, as a Fahrenheit temperature (no
+conversion required).
+•	 getCelsius – Returns the value of the ftemp	field	converted	to	Celsius.
+•	 getKelvin – Returns the value of the ftemp field converted to Kelvin.
+
+Use	the	following	formula	to	convert	the	Fahrenheit	temperature	to	Celsius:
+Celsius = (5/9) * (Fahrenheit -	32)
+
+Use the following formula to convert the Fahrenheit temperature to Kelvin:
+Kelvin = ((5/9) * (Fahrenheit - 32) + 273)
+
+Demonstrate the Temperature class by writing a separate program that asks the user for a
+Fahrenheit temperature. The program should create an instance of the Temperature class,
+with the value entered by the user passed to the constructor. The program should then call
+the	object’s methods	to	display	the	temperature	in	Celsius	and	Kelvin.
